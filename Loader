@@ -1,0 +1,368 @@
+
+local ScriptHub = Instance.new("ScreenGui")
+ScriptHub.Name = "ScriptHub"
+ScriptHub.Parent = game:GetService("CoreGui") or game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+
+local MainFrame = Instance.new("Frame")
+MainFrame.Name = "MainFrame"
+MainFrame.Size = UDim2.new(0, 600, 0, 400)
+MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+MainFrame.BorderSizePixel = 0
+MainFrame.ClipsDescendants = true
+MainFrame.Parent = ScriptHub
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 8)
+UICorner.Parent = MainFrame
+
+local TopBar = Instance.new("Frame")
+TopBar.Name = "TopBar"
+TopBar.Size = UDim2.new(1, 0, 0, 40)
+TopBar.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+TopBar.BorderSizePixel = 0
+TopBar.Parent = MainFrame
+
+local Title = Instance.new("TextLabel")
+Title.Name = "Title"
+Title.Size = UDim2.new(0, 200, 1, 0)
+Title.Position = UDim2.new(0, 10, 0, 0)
+Title.BackgroundTransparency = 1
+Title.Text = "King Hub"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextXAlignment = Enum.TextXAlignment.Left
+Title.Font = Enum.Font.GothamBold
+Title.TextSize = 18
+Title.Parent = TopBar
+
+local CloseButton = Instance.new("TextButton")
+CloseButton.Name = "CloseButton"
+CloseButton.Size = UDim2.new(0, 30, 0, 30)
+CloseButton.Position = UDim2.new(1, -40, 0.5, -15)
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 50, 50)
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.Text = "X"
+CloseButton.Font = Enum.Font.GothamBold
+CloseButton.TextSize = 16
+CloseButton.Parent = TopBar
+
+local UICorner2 = Instance.new("UICorner")
+UICorner2.CornerRadius = UDim.new(0, 4)
+UICorner2.Parent = CloseButton
+
+CloseButton.MouseButton1Click:Connect(function()
+	ScriptHub:Destroy()
+end)
+
+local CategoriesFrame = Instance.new("Frame")
+CategoriesFrame.Name = "CategoriesFrame"
+CategoriesFrame.Size = UDim2.new(0, 150, 1, -40)
+CategoriesFrame.Position = UDim2.new(0, 0, 0, 40)
+CategoriesFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+CategoriesFrame.BorderSizePixel = 0
+CategoriesFrame.Parent = MainFrame
+
+local CategoryList = Instance.new("ScrollingFrame")
+CategoryList.Name = "CategoryList"
+CategoryList.Size = UDim2.new(1, 0, 1, 0)
+CategoryList.BackgroundTransparency = 1
+CategoryList.BorderSizePixel = 0
+CategoryList.ScrollBarThickness = 5
+CategoryList.Parent = CategoriesFrame
+
+local UIListLayout = Instance.new("UIListLayout")
+UIListLayout.Padding = UDim.new(0, 5)
+UIListLayout.Parent = CategoryList
+
+local ContentFrame = Instance.new("Frame")
+ContentFrame.Name = "ContentFrame"
+ContentFrame.Size = UDim2.new(1, -150, 1, -40)
+ContentFrame.Position = UDim2.new(0, 150, 0, 40)
+ContentFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+ContentFrame.BorderSizePixel = 0
+ContentFrame.Parent = MainFrame
+
+local ScriptsContainer = Instance.new("ScrollingFrame")
+ScriptsContainer.Name = "ScriptsContainer"
+ScriptsContainer.Size = UDim2.new(1, -20, 1, -20)
+ScriptsContainer.Position = UDim2.new(0, 10, 0, 10)
+ScriptsContainer.BackgroundTransparency = 1
+ScriptsContainer.BorderSizePixel = 0
+ScriptsContainer.ScrollBarThickness = 5
+ScriptsContainer.Parent = ContentFrame
+
+local ScriptsListLayout = Instance.new("UIListLayout")
+ScriptsListLayout.Padding = UDim.new(0, 15)
+ScriptsListLayout.Parent = ScriptsContainer
+
+-- Script data
+local Scripts = {
+	{
+		Name = "Infinite Yield",
+		Category = "Admin",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()",
+		Description = "Most popular admin commands script"
+	},
+	{
+		Name = "Dark Dex",
+		Category = "Utility",
+		Loadstring = "loadstring(game:HttpGet('https://gist.githubusercontent.com/dannythehacker/1781582ab545302f2b34afc4ec53e811/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'))()",
+		Description = "Advanced explorer/decompiler"
+	},
+	{
+		Name = "SimpleSpy",
+		Category = "Utility",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/master/SimpleSpy.lua'))()",
+		Description = "Remote spy for debugging"
+	},
+	{
+		Name = "CMD-X",
+		Category = "Admin",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source'))()",
+		Description = "Alternative admin commands"
+	},
+	{
+		Name = "Hydroxide",
+		Category = "Utility",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Upbolt/Hydroxide/revision/UI.lua'))()",
+		Description = "Advanced exploit tool"
+	},
+	{
+		Name = "Troll Hub",
+		Category = "Games",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/script'))()",
+		Description = "Troll Hub for trolling r15 only"
+	},
+	{
+		Name = "Dead rails script OP AUTO BOND FARM",
+		Category = "Games",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/m00ndiety/Keyless-auto-bonds/refs/heads/main/obfuscated%20(6).txt'))()",
+		Description = "This Auto Bonds Script gives you 80+ bonds per run — fully automated and keyless!"
+	},
+	{
+		Name = "Gloomies Hub (Slap Tower 2)",
+		Category = "Games",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/gloooomie/GloomieHub/refs/heads/main/loader'))()",
+		Description = "Cool hub that supports Slap Tower 2!"
+	},
+	{
+		Name = "Ro Ghoul",
+		Category = "Games",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/PorryDepTrai/exploit/main/DashBoostSolora.lua'))()",
+		Description = "Script for Ro ghoul"
+	},
+	{
+		Name = "No Lag Hub",
+		Category = "Games",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/NukeVsCityLoader/NoLag/refs/heads/main/NoLagHub'))()",
+		Description = "Advanced game hub"
+	},
+	{
+		Name = "MM2 script",
+		Category = "Games",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/NukeVsCityLoader/Death/refs/heads/main/death'))()",
+		Description = "normal mm2 script that esp"
+	},
+	{
+		Name = "Forge Hub",
+		Category = "Games",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Skzuppy/forge-hub/main/loader.lua'))()",
+		Description = "10+ GAMES, OP FEATURES, AUTOFARMS AND LOTS MORE!"
+	},
+	{
+		Name = "error",
+		Category = "Games",
+		Loadstring = "0",
+		Description = "dont mind this script"
+	},
+	{
+		Name = "Arsenal",
+		Category = "Games",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Insertl/QuotasHub/main/BETAv1.3'))()",
+		Description = "Script for Arsenal"
+	},
+	{
+		Name = "Untitled Boxing",
+		Category = "Games",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/pid4k/scripts/main/BeanzHub.lua'))()",
+		Description = "Script for untitled Boxing"
+	},
+	{
+		Name = "Dead Rails",
+		Category = "Games",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/gumanba/Scripts/main/DeadRails'))()",
+		Description = "Script for Dead Rails"
+	},
+	{
+		Name = "Unnamed ESP",
+		Category = "ESP",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua',true))()",
+		Description = "Feature-rich ESP script"
+	},
+	{
+		Name = "Universal Aimbot",
+		Category = "ESP",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Exunys/AirHub/main/AirHub.lua',true))()",
+		Description = "Universal Aimbot"
+	},
+	{
+		Name = "Vynixius",
+		Category = "Combat",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Loader.lua'))()",
+		Description = "Combat utilities"
+	}
+}
+
+-- Get all unique categories
+local categories = {}
+for _, script in ipairs(Scripts) do
+	if not table.find(categories, script.Category) then
+		table.insert(categories, script.Category)
+	end
+end
+table.sort(categories)
+
+-- Create category buttons
+for _, category in ipairs(categories) do
+	local CategoryButton = Instance.new("TextButton")
+	CategoryButton.Name = category
+	CategoryButton.Size = UDim2.new(1, -10, 0, 40)
+	CategoryButton.Position = UDim2.new(0, 5, 0, 0)
+	CategoryButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+	CategoryButton.Text = category
+	CategoryButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	CategoryButton.Font = Enum.Font.Gotham
+	CategoryButton.TextSize = 14
+	CategoryButton.Parent = CategoryList
+
+	local UICorner3 = Instance.new("UICorner")
+	UICorner3.CornerRadius = UDim.new(0, 4)
+	UICorner3.Parent = CategoryButton
+
+	CategoryButton.MouseButton1Click:Connect(function()
+		-- Clear current scripts
+		for _, child in ipairs(ScriptsContainer:GetChildren()) do
+			if child:IsA("Frame") then
+				child:Destroy()
+			end
+		end
+
+		-- Add scripts for selected category
+		for _, script in ipairs(Scripts) do
+			if script.Category == category then
+				local ScriptFrame = Instance.new("Frame")
+				ScriptFrame.Name = script.Name
+				ScriptFrame.Size = UDim2.new(1, 0, 0, 100)
+				ScriptFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+				ScriptFrame.Parent = ScriptsContainer
+
+				local UICorner4 = Instance.new("UICorner")
+				UICorner4.CornerRadius = UDim.new(0, 6)
+				UICorner4.Parent = ScriptFrame
+
+				local NameLabel = Instance.new("TextLabel")
+				NameLabel.Name = "NameLabel"
+				NameLabel.Size = UDim2.new(0.7, -10, 0, 30)
+				NameLabel.Position = UDim2.new(0, 10, 0, 10)
+				NameLabel.BackgroundTransparency = 1
+				NameLabel.Text = script.Name
+				NameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+				NameLabel.TextXAlignment = Enum.TextXAlignment.Left
+				NameLabel.Font = Enum.Font.GothamBold
+				NameLabel.TextSize = 16
+				NameLabel.Parent = ScriptFrame
+
+				local DescLabel = Instance.new("TextLabel")
+				DescLabel.Name = "DescLabel"
+				DescLabel.Size = UDim2.new(1, -20, 0, 40)
+				DescLabel.Position = UDim2.new(0, 10, 0, 45)
+				DescLabel.BackgroundTransparency = 1
+				DescLabel.Text = script.Description
+				DescLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
+				DescLabel.TextXAlignment = Enum.TextXAlignment.Left
+				DescLabel.TextYAlignment = Enum.TextYAlignment.Top
+				DescLabel.Font = Enum.Font.Gotham
+				DescLabel.TextSize = 12
+				DescLabel.Parent = ScriptFrame
+
+				local ExecuteButton = Instance.new("TextButton")
+				ExecuteButton.Name = "ExecuteButton"
+				ExecuteButton.Size = UDim2.new(0.25, -10, 0, 30)
+				ExecuteButton.Position = UDim2.new(0.75, 5, 0, 10)
+				ExecuteButton.BackgroundColor3 = Color3.fromRGB(60, 150, 60)
+				ExecuteButton.Text = "Execute"
+				ExecuteButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+				ExecuteButton.Font = Enum.Font.GothamBold
+				ExecuteButton.TextSize = 14
+				ExecuteButton.Parent = ScriptFrame
+
+				local UICorner5 = Instance.new("UICorner")
+				UICorner5.CornerRadius = UDim.new(0, 4)
+				UICorner5.Parent = ExecuteButton
+
+				ExecuteButton.MouseButton1Click:Connect(function()
+					if script.Loadstring ~= "0" then
+						loadstring(script.Loadstring)()
+					end
+				end)
+			end
+		end
+
+		-- Update canvas size
+		ScriptsContainer.CanvasSize = UDim2.new(0, 0, 0, ScriptsListLayout.AbsoluteContentSize.Y + 20)
+	end)
+end
+
+-- Select first category by defaultMainFrame.Position = UDim2.new(0.5, -300, 0.5, -200)
+
+if #categories > 0 then
+	CategoryList:FindFirstChild(categories[1]):Activate()
+end
+
+-- Update layout sizes
+CategoryList.ChildAdded:Connect(function()
+	CategoryList.CanvasSize = UDim2.new(0, 0, 0, UIListLayout.AbsoluteContentSize.Y + 10)
+end)
+
+ScriptsContainer.ChildAdded:Connect(function()
+	ScriptsContainer.CanvasSize = UDim2.new(0, 0, 0, ScriptsListLayout.AbsoluteContentSize.Y + 20)
+end)
+
+-- Replace the existing draggable code with this:
+
+-- Make draggable
+local UserInputService = game:GetService("UserInputService")
+local dragging = false
+local dragStart
+local startPos
+
+local function update(input)
+	local delta = input.Position - dragStart
+	MainFrame.Position = UDim2.new(
+		startPos.X.Scale,
+		startPos.X.Offset + delta.X,
+		startPos.Y.Scale,
+		startPos.Y.Offset + delta.Y
+	)
+end
+
+TopBar.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		dragging = true
+		dragStart = input.Position
+		startPos = MainFrame.Position
+
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragging = false
+			end
+		end)
+	end
+end)
+
+TopBar.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
+		update(input)
+	end
+end)
