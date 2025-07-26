@@ -98,120 +98,119 @@ ScriptsListLayout.Parent = ScriptsContainer
 
 -- Script data
 local Scripts = {
-{
 	{
-		Name = "Universal Aimbot",
-		Category = "ESP",
-		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Exunys/AirHub/main/AirHub.lua',true))()",
-		Description = "Aim assist that works across many games"
+		Name = "Infinite Yield",
+		Category = "Admin",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()",
+		Description = "Most popular admin commands script"
 	},
 	{
 		Name = "Dark Dex",
 		Category = "Utility",
 		Loadstring = "loadstring(game:HttpGet('https://gist.githubusercontent.com/dannythehacker/1781582ab545302f2b34afc4ec53e811/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'))()",
-		Description = "Explore and analyze the game’s internals"
-	},
-	{
-		Name = "Ro Ghoul",
-		Category = "Games",
-		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/PorryDepTrai/exploit/main/DashBoostSolora.lua'))()",
-		Description = "Boost your abilities in Ro Ghoul with this tool"
-	},
-	{
-		Name = "Forge Hub",
-		Category = "Games",
-		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Skzuppy/forge-hub/main/loader.lua'))()",
-		Description = "Supports 10+ games with autofarms and features"
+		Description = "Advanced explorer/decompiler"
 	},
 	{
 		Name = "SimpleSpy",
 		Category = "Utility",
 		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/master/SimpleSpy.lua'))()",
-		Description = "Observe remote calls and debug your games easily"
-	},
-	{
-		Name = "Dead Rails",
-		Category = "Games",
-		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/gumanba/Scripts/main/DeadRails'))()",
-		Description = "Script designed to enhance your Dead Rails experience"
-	},
-	{
-		Name = "Troll Hub",
-		Category = "Games",
-		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/script'))()",
-		Description = "Fun trolling tools exclusively for R15 characters"
-	},
-	{
-		Name = "Gloomies Hub (Slap Tower 2)",
-		Category = "Games",
-		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/gloooomie/GloomieHub/refs/heads/main/loader'))()",
-		Description = "A slap tower 2-specific script hub packed with features"
+		Description = "Remote spy for debugging"
 	},
 	{
 		Name = "CMD-X",
 		Category = "Admin",
 		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source'))()",
-		Description = "Admin script with a variety of powerful commands"
+		Description = "Alternative admin commands"
 	},
 	{
 		Name = "Hydroxide",
 		Category = "Utility",
 		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Upbolt/Hydroxide/revision/UI.lua'))()",
-		Description = "Developer-focused toolkit for debugging and inspection"
+		Description = "Advanced exploit tool"
 	},
 	{
-		Name = "MM2 script",
+		Name = "Troll Hub",
 		Category = "Games",
-		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/NukeVsCityLoader/Death/refs/heads/main/death'))()",
-		Description = "A Murder Mystery 2 ESP tool to help locate players"
-	},
-	{
-		Name = "Infinite Yield",
-		Category = "Admin",
-		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()",
-		Description = "Widely used script offering admin-style controls"
-	},
-	{
-		Name = "Unnamed ESP",
-		Category = "ESP",
-		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua',true))()",
-		Description = "ESP script with name, box, tracers, and more"
-	},
-	{
-		Name = "Arsenal",
-		Category = "Games",
-		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Insertl/QuotasHub/main/BETAv1.3'))()",
-		Description = "Enhance your gameplay in Arsenal with this script"
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/script'))()",
+		Description = "Troll Hub for trolling r15 only"
 	},
 	{
 		Name = "Dead rails script OP AUTO BOND FARM",
 		Category = "Games",
 		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/m00ndiety/Keyless-auto-bonds/refs/heads/main/obfuscated%20(6).txt'))()",
-		Description = "Automatically farms 80+ bonds each run, no key required"
+		Description = "This Auto Bonds Script gives you 80+ bonds per run — fully automated and keyless!"
 	},
 	{
-		Name = "Untitled Boxing",
+		Name = "Gloomies Hub (Slap Tower 2)",
 		Category = "Games",
-		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/pid4k/scripts/main/BeanzHub.lua'))()",
-		Description = "Boxing-focused script for performance boosts and wins"
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/gloooomie/GloomieHub/refs/heads/main/loader'))()",
+		Description = "Cool hub that supports Slap Tower 2!"
+	},
+	{
+		Name = "Ro Ghoul",
+		Category = "Games",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/PorryDepTrai/exploit/main/DashBoostSolora.lua'))()",
+		Description = "Script for Ro ghoul"
 	},
 	{
 		Name = "No Lag Hub",
 		Category = "Games",
 		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/NukeVsCityLoader/NoLag/refs/heads/main/NoLagHub'))()",
-		Description = "Performance enhancer that helps reduce lag and stutters"
+		Description = "Advanced game hub"
 	},
 	{
-		Name = "Vynixius",
-		Category = "Combat",
-		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Loader.lua'))()",
-		Description = "Packed with useful tools for combat situations"
+		Name = "MM2 script",
+		Category = "Games",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/NukeVsCityLoader/Death/refs/heads/main/death'))()",
+		Description = "normal mm2 script that esp"
+	},
+	{
+		Name = "Forge Hub",
+		Category = "Games",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Skzuppy/forge-hub/main/loader.lua'))()",
+		Description = "10+ GAMES, OP FEATURES, AUTOFARMS AND LOTS MORE!"
 	},
 	{
 		Name = "error",
 		Category = "Games",
 		Loadstring = "0",
-		Description = "This entry is invalid or unused, just ignore it"
+		Description = "dont mind this script"
+	},
+	{
+		Name = "Arsenal",
+		Category = "Games",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Insertl/QuotasHub/main/BETAv1.3'))()",
+		Description = "Script for Arsenal"
+	},
+	{
+		Name = "Untitled Boxing",
+		Category = "Games",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/pid4k/scripts/main/BeanzHub.lua'))()",
+		Description = "Script for untitled Boxing"
+	},
+	{
+		Name = "Dead Rails",
+		Category = "Games",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/gumanba/Scripts/main/DeadRails'))()",
+		Description = "Script for Dead Rails"
+	},
+	{
+		Name = "Unnamed ESP",
+		Category = "ESP",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua',true))()",
+		Description = "Feature-rich ESP script"
+	},
+	{
+		Name = "Universal Aimbot",
+		Category = "ESP",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Exunys/AirHub/main/AirHub.lua',true))()",
+		Description = "Universal Aimbot"
+	},
+	{
+		Name = "Vynixius",
+		Category = "Combat",
+		Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Loader.lua'))()",
+		Description = "Combat utilities"
 	}
 }
 
