@@ -252,12 +252,6 @@ local Scripts = {
         Description = "Dash boost and farming for Ro Ghoul"
     },
     {
-        Name = "No Lag Hub",
-        Category = "Games",
-        Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/NukeVsCityLoader/NoLag/refs/heads/main/NoLagHub'))()",
-        Description = "Advanced game hub with autofarm features"
-    },
-    {
         Name = "Forge Hub",
         Category = "Games",
         Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Skzuppy/forge-hub/main/loader.lua'))()",
