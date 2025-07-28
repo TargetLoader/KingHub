@@ -239,6 +239,12 @@ local Scripts = {
         Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/m00ndiety/Keyless-auto-bonds/refs/heads/main/obfuscated%20(6).txt'))()",
         Description = "Auto farm script for Dead Rails (80+ bonds per run)"
     },
+{
+        Name = "No Lag Hub",
+        Category = "Games",
+        Loadstring = "loadstring(game:HttpGet('https://raw.githubusercontent.com/NukeVsCityLoader/NoLag/refs/heads/main/NoLagHub'))()",
+        Description = "Advanced game hub"
+    },
     {
         Name = "Gloomies Hub",
         Category = "Games",
